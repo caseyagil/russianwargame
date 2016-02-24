@@ -3,6 +3,8 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css">
+<!--Remember to put jquery at the top however javascript needs to be at the bottom above the body tag.-->
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <title>Russian War</title>
 </head>
 <body>
@@ -29,48 +31,6 @@
 		<div id="computer-card-flipped"></div>
 	</div>
 	<span class="btn-playagain">Play Again?</span>
-
 <script src="war.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<script>
-	$(document).ready(function() {
-		$('.btn-start').show();
-		$('.btn-flip').hide();
-		$('.btn-playagain').hide();
-	});
-	$('.btn-start').click(function(e) {
-		$(this).remove();
-		$('.btn-flip').toggle();
-		assignDeck(shuffle(cards));
-		console.log("userDeck: ", userDeck);
-		console.log("computerDeck: ", computerDeck);
-		mainGame();
-		$('#userPoints').empty().append("UserPoints: " + userPoints);
-		$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
-		winnerCheck(userPoints, computerPoints);
-	});
-	$('.btn-flip').click(function(e) {
-		mainGame();
-		$('#userPoints').empty().append("UserPoints: " + userPoints);
-		$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
-		winnerCheck(userPoints, computerPoints);
-	});
-	$('.btn-playagain').click(function(e) {
-		$(this).hide();
-		$('.btn-flip').toggle();
-		$('#win').remove();
-		$('#lose').remove();
-		MGi = 0;
-		userDeck = [], userPoints = 0;
-		computerDeck = [], computerPoints = 0;
-		assignDeck(shuffle(cards));
-		console.log("userDeck: ", userDeck);
-		console.log("computerDeck: ", computerDeck);
-		mainGame();
-		$('#userPoints').empty().append("UserPoints: " + userPoints);
-		$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
-		winnerCheck(userPoints, computerPoints);
-	});
-</script>
 </body>
 </html>

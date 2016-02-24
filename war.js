@@ -85,43 +85,43 @@ var mainGame = function () {
 	bonus = 0;
 };
 
-// // jquery stuff
-// $(document).ready(function() {
-// 	$('.btn-start').show();
-// 	$('.btn-flip').hide();
-// 	$('.btn-playagain').hide();
-// });
-// $('.btn-start').click(function(e) {
-// 	$(this).remove();
-// 	$('.btn-flip').toggle();
-// 	assignDeck(shuffle(cards));
-// 	console.log("userDeck: ", userDeck);
-// 	console.log("computerDeck: ", computerDeck);
-// 	mainGame();
-// 	$('#userPoints').empty().append("UserPoints: " + userPoints);
-// 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
-// 	winnerCheck(userPoints, computerPoints);
-// });
-// $('.btn-flip').click(function(e) {
-// 	mainGame();
-// 	$('#userPoints').empty().append("UserPoints: " + userPoints);
-// 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
-// 	winnerCheck(userPoints, computerPoints);
-// 	// $('#war').remove();
-// });
-// $('.btn-playagain').click(function(e) {
-// 	$(this).hide();
-// 	$('.btn-flip').toggle();
-// 	$('#win').remove();
-// 	$('#lose').remove();
-// 	MGi = 0;
-// 	userDeck = [], userPoints = 0;
-// 	computerDeck = [], computerPoints = 0;
-// 	assignDeck(shuffle(cards));
-// 	console.log("userDeck: ", userDeck);
-// 	console.log("computerDeck: ", computerDeck);
-// 	mainGame();
-// 	$('#userPoints').empty().append("UserPoints: " + userPoints);
-// 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
-// 	winnerCheck(userPoints, computerPoints);
-// });
+// jquery stuff
+$(document).ready(function() {
+	$('.btn-start').show();
+	$('.btn-flip').hide();
+	$('.btn-playagain').hide();
+});
+$('.btn-start').click(function(e) {
+	$(this).remove();
+	$('.btn-flip').toggle();
+	assignDeck(shuffle(cards));
+	console.log("userDeck: ", userDeck);
+	console.log("computerDeck: ", computerDeck);
+	mainGame();
+	$('#userPoints').empty().append("UserPoints: " + userPoints);
+	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
+	winnerCheck(userPoints, computerPoints);
+});
+$('.btn-flip').click(function(e) {
+	mainGame();
+	$('#userPoints').empty().append("UserPoints: " + userPoints);
+	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
+	winnerCheck(userPoints, computerPoints);
+	// $('#war').remove();
+});
+$('.btn-playagain').click(function(e) {
+	$(this).hide();
+	$('.btn-flip').toggle();
+	$('#win').remove();
+	$('#lose').remove();
+	MGi = 0;
+	userDeck = [], userPoints = 0;
+	computerDeck = [], computerPoints = 0;
+	assignDeck(shuffle(cards));
+	console.log("userDeck: ", userDeck);
+	console.log("computerDeck: ", computerDeck);
+	mainGame();
+	$('#userPoints').empty().append("UserPoints: " + userPoints);
+	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
+	winnerCheck(userPoints, computerPoints);
+});
