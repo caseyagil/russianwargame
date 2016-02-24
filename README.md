@@ -11,3 +11,7 @@ Stage: Silver:
 
 
 Stage: Gold:
+
+
+
+Glitches: In the bronze stage I had inline coding for jquery and when attempted to place in the js file the game broke.
