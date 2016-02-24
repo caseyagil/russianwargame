@@ -23,7 +23,7 @@ while (c < 52) {
 }
 
 //cuts the deck
-//the 'array' here and in the ff is our 'var cards' above
+//the array here and var cards above
 var assignDeck = function(array){
 	for(var i = 0; i < (array.length); i++){
 		if (i % 2 === 0) {
@@ -70,8 +70,7 @@ var mainGame = function () {
 		MGi += 2;
 		bonus += 2;
 		alert('WAR!');
-		// $('#here').html('<div id="war">WAR</div>');
-		// $('#war').fadeOut('5000');
+
 	};
 	if(userDeck[MGi].value > computerDeck[MGi].value){
 		userPoints++;
@@ -85,3 +84,44 @@ var mainGame = function () {
 	MGi++;
 	bonus = 0;
 };
+
+// // jquery stuff
+// $(document).ready(function() {
+// 	$('.btn-start').show();
+// 	$('.btn-flip').hide();
+// 	$('.btn-playagain').hide();
+// });
+// $('.btn-start').click(function(e) {
+// 	$(this).remove();
+// 	$('.btn-flip').toggle();
+// 	assignDeck(shuffle(cards));
+// 	console.log("userDeck: ", userDeck);
+// 	console.log("computerDeck: ", computerDeck);
+// 	mainGame();
+// 	$('#userPoints').empty().append("UserPoints: " + userPoints);
+// 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
+// 	winnerCheck(userPoints, computerPoints);
+// });
+// $('.btn-flip').click(function(e) {
+// 	mainGame();
+// 	$('#userPoints').empty().append("UserPoints: " + userPoints);
+// 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
+// 	winnerCheck(userPoints, computerPoints);
+// 	// $('#war').remove();
+// });
+// $('.btn-playagain').click(function(e) {
+// 	$(this).hide();
+// 	$('.btn-flip').toggle();
+// 	$('#win').remove();
+// 	$('#lose').remove();
+// 	MGi = 0;
+// 	userDeck = [], userPoints = 0;
+// 	computerDeck = [], computerPoints = 0;
+// 	assignDeck(shuffle(cards));
+// 	console.log("userDeck: ", userDeck);
+// 	console.log("computerDeck: ", computerDeck);
+// 	mainGame();
+// 	$('#userPoints').empty().append("UserPoints: " + userPoints);
+// 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
+// 	winnerCheck(userPoints, computerPoints);
+// });
