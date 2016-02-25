@@ -49,12 +49,12 @@ var shuffle = function(array) {
 
 //checks if either the computer or player already won the game
 var winnerCheck = function (playerPoints, computerPoints) {
-	if (playerPoints >= 10) {
+	if (playerPoints >= 12) {
 		// alert("Congrats you won the game!");
 		$('#decision').html('<div id="win">You won!</div>');
 		$('.btn-flip').hide();
 		$('.btn-playagain').toggle();//This is the play again
-	} else if (computerPoints >= 10) {
+	} else if (computerPoints >= 12) {
 		// alert("You lose!");
 		$('#decision').html('<div id="lose">You lose!</div>');
 		$('.btn-flip').hide();
@@ -107,7 +107,7 @@ $('.btn-flip').click(function(e) {
 	$('#userPoints').empty().append("UserPoints: " + userPoints);
 	$('#computerPoints').empty().append("ComputerPoints: " + computerPoints);
 	winnerCheck(userPoints, computerPoints);
-	// $('#war').remove();
+
 });
 $('.btn-playagain').click(function(e) {
 	$(this).hide();
