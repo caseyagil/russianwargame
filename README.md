@@ -1,6 +1,6 @@
 War Russian Style:
 Stage: Bronze:
-    This is considered my bronze stage, while at the end of this week of 22FEB2016 having completed the game in the rules of the Russia War game.
+    This is considered my bronze stage, while at the end of this week of 22FEB2016 having completed the game ( I hope) in the rules of the Russia War game.
 
 
 
