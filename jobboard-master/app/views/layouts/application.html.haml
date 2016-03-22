@@ -1,0 +1,55 @@
+!!!
+/
+/ JobBoard: A simple rails demo project.
+/ Copyright © 2011 Timothy James; All rights reserved
+/ http://github.com/enthal/jobboard
+/
+%html
+
+  %head
+    %title JobBoard
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+  
+    %div.navbar
+      %table{style:"width:100%"}
+        %tr.subtle
+          %td
+            %table.minimal
+              %tr
+                %td
+                  %b.logolink
+                    %a{href:root_path} Job<i>Board</i>
+                - if user_signed_in?
+                  %td
+                    Welcome
+                    %i= current_user.name
+          %td
+            %table.minimal{style:"float:right"}
+              %tr
+                %td= link_to 'List Jobs', jobs_path
+                - if user_signed_in?
+                  %td= link_to 'Post Job', new_job_path
+                  %td= link_to 'View Messages', messages_path
+                = render 'layouts/registration_items'
+                = render 'layouts/login_items'
+    
+    
+    - if notice
+      %div.notice= notice
+    - if alert
+      %div.alert= alert
+    
+    %div{style:"margin:10px"}
+    
+      = yield
+
+    %div{style:"margin:15px 0px 0px 2px; font-size: 70%;"}
+      %span{style:"color:#999; border-top:solid 1px #EEE"}
+        Job<i>Board</i>: A simple rails demo project ●
+        Copyright © 2011 Timothy James; All rights reserved ●
+        %a.subtle{href:"http://github.com/enthal/jobboard", style:"color:#AAA"}
+          http://github.com/enthal/jobboard
