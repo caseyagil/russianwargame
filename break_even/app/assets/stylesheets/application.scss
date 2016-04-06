@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+ *= require_self
+ */
+
+*{
+  box-sizing:border-box;
+  font-family: 'Montserrat Subrayada', sans-serif;
+}
+body{
+  margin:auto;
+}
+
+.new-body{
+  background: url("barbell.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.nav{
+  position: relative;
+  background-color: rgba(30, 33, 39, 0.5);
+}
+.navbutton{
+  font-size: 1em;
+  color: white;
+  display: inline;
+  text-align: justify;
+  padding-left: 8%;
+  padding-right: 8%;
+  transition: color .6s;
+}
+.navbutton:hover {
+  color: rgb(163, 22, 0);
+}
+
+.lead {
+  font-size: 600%;
+  text-align:center;
+}
+.lead, .lesserlead, .tagline2{
+  letter-spacing:.05%;
+  color: rgb(163, 22, 0);
+  text-shadow:.5em .5em 0 rgba(0, 0, 0, 0.5);
+}
+
+.lesserlead {
+  font-size: 400%;
+  padding-left: 2%;
+}
+.tagline2 {
+  font-size:2em;
+
+}
+.go-new, .go-now {
+  background-color: rgba(30, 33, 39, 0.5);
+  color:#FFFFFF;
+  width:47%;
+  text-align: center;
+  padding:4%;
+  transition: background-color .7s, color 1s;
+}
+.go-now:hover, .go-new:hover{
+  background-color: rgba(255, 255, 255, .5);
+  color: rgb(163, 22, 0);
+}
+
+.go-new{
+  float: left;
+}
+.go-now {
+  float:right;
+}
+
+a {
+  color: inherit;
+}
+.slider {
+  position: absolute;
+  padding-left: 2%;
+  left: -20%;
+  width: 16em;
+  height: 1em;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 0.5s forwards;
+  animation-delay: 1s;
+}
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+@keyframes slide {
+  100% { left: 0; }
+}
+
+.exindex {
+  color: rgb(30, 33, 39);
+  margin:0;
+  padding: 17px;
+  text-align: right;
+  height:145px;
+  background: rgba(255,255,255,0.4);
+}
+.exindex label{
+  padding: 4em 4em 4em 0em;
+  color: rgb(255,255,255)
+}
+.exindex input{
+  margin-bottom: 2em;
+}
+#calendarWeek {
+  margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+.calendarDay {
+    max-width:200px;
+    max-height:200px;
+}

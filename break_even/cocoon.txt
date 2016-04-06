@@ -1,0 +1,13 @@
+To use cocoon
+
+first install the gem
+
+then add 
+
+//= require cocoon
+
+to app/assets/javascripts/application.js
+
+then create the models for the forms
+
+  rails g model Exercise name:string 

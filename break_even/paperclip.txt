@@ -1,0 +1,50 @@
+Too add images to a form first
+
+add the paperclip gem
+ you need to have image magic installed
+
+ then add the following to the model in which you want the image stored
+
+  this is the table name that will be added to the DB
+                      |
+                      V
+  has_attached_file :image, :styles => { :medium => "300x300#>"}
+  validates_attachment_content_type :image, :content_type: /\Aimage\/.*\Z/
+
+then create a migration for the image to connct to the models database
+
+rails g paperclip (name of controller linked to that model) image <- table name
+  example:
+    rails g paperclip exercises image <- table name
+
+then rake db:migrate and it should create a table
+
+class AddAttachmentImageToExercises < ActiveRecord::Migration
+  def self.up
+    change_table :exercises do |t|
+      t.attachment :image
+    end
+  end
+
+  def self.down
+    remove_attachment :exercises, :image
+  end
+end
+
+then add the new table to your params method -----------------------
+                                                                   |
+  example                                                          |
+                                                                   |
+  def trainings_params                                             V
+    params.require(:exercises).permit(:date, :name, :description, :image)
+  end
+
+  then add it to your form
+
+    f.input :image, input_html: {class: 'form-control'}
+
+  to avoid errors restart the server
+
+to display it
+
+image_tag @exercise.image.url(:medium, class: "exercise_image")
